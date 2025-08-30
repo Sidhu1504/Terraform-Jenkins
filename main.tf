@@ -1,0 +1,23 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+provider "aws" {
+  region = "us-east-2"      
+}
+resource "aws_instance" "myinstance" {
+	 ami = "ami-04f167a56786e4b09"
+	 instance_type = "t2.micro"
+	 subnet_id = "subnet-0d25c37210724fced"
+	 associate_public_ip_address = true
+	 key_name = "sidhu"
+	 count = 1
+	  tags = {
+    Name = "tf-example"
+  }
+} 
+
