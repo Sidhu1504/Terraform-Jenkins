@@ -10,9 +10,8 @@ provider "aws" {
   region = "us-east-2"      
 }
 resource "aws_instance" "myinstance" {
-	 ami = "ami-04f167a56786e4b09"
-	 instance_type = "t2.micro"
-	 subnet_id = "subnet-0d25c37210724fced"
+	 ami = "ami-0cfde0ea8edd312d4"
+	 instance_type = "t3.micro"
 	 associate_public_ip_address = true
 	 key_name = "sidhu"
 	 count = 1
